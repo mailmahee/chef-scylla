@@ -1,0 +1,19 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: 11.6.0
+  # require_chef_omnibus: latest # will reïnstall chef on each run
+
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    box: opscode-ubuntu-12.04
+    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+  run_list:
+    - "recipe[apt]"
+
+suites:
+- name: default
+  run_list:
+    - "recipe[chef-scylla]"
+  attributes: {}
