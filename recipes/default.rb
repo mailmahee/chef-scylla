@@ -25,8 +25,7 @@ end
 
 git "#{node['scylla']['prefix']}/scylla" do
   repository node['scylla']['repo']
-#  reference node['scylla']['reference']
-  reference 'use-https-charybdis'
+  reference node['scylla']['reference']
   action :sync
 end
 
