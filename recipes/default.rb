@@ -51,6 +51,25 @@ directory "#{node['scylla']['localstatedir']}/run/scylla" do
   group node['scylla']['group']
 end
 
+template "#{node['scylla']['prefix']}/scylla/config/mail.js" do
+  owner 'root'
+  group node['root_group']
+  mode '644'
+  variables(
+    scylla: node['scylla']
+  )
+end
+
+template "#{node['scylla']['prefix']}/bin/scylla" do
+  source 'executable.erb'
+  owner 'root'
+  group node['root_group']
+  mode '755'
+  variables(
+    scylla: node['scylla']
+  )
+end
+
 template '/etc/init/scylla.conf' do
   owner 'root'
   group node['root_group']

@@ -7,3 +7,6 @@ default['scylla']['localstatedir'] = '/var'
 default['scylla']['user'] = 'scylla'
 default['scylla']['repo'] = 'https://github.com/simplymeasured/scylla.git'
 default['scylla']['reference'] = 'master'
+
+default['scylla']['mail_user'] = 'username'
+default['scylla']['mail_key'] = 'password'
