@@ -7,7 +7,7 @@ stop on shutdown
 setuid <%= @scylla['user'] %>
 
 script
-    echo $$ > <%= @scylla['localstatedir'] %>/scylla/scylla.pid
+    echo $$ > <%= @scylla['localstatedir'] %>/run/scylla/scylla.pid
     exec <%= @scylla['prefix'] %>/bin/scylla
 end script
 
