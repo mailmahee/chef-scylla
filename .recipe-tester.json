@@ -1,0 +1,10 @@
+{
+    "type": "chef-solo",
+    "chef_version": "11.6.0",
+    "ami": "ami-e7582d8e",
+    "run_list": [
+        "scylla"
+    ]
+}
+
+
