@@ -1,6 +1,8 @@
 Scylla cookbook
 ===============
 
+![Build status](https://www.recipe-tester.com/repo/simplymeasured/chef-scylla/badge.png)
+
 Installs and configures a [scylla](https://github.com/simplymeasured/scylla) server.
 
 Usage
