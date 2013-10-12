@@ -15,7 +15,6 @@ include_recipe 'imagemagick'
 include_recipe 'mongodb::10gen_repo'
 include_recipe 'mongodb'
 include_recipe 'nodejs'
-include_recipe 'npm'
 
 user node['scylla']['user'] do
   supports manage_home: true
