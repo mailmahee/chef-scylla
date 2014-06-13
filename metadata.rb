@@ -1,4 +1,4 @@
-name             'chef-scylla'
+name             'scylla'
 maintainer       'Simply Measured'
 maintainer_email 'ops@simplymeasured.com'
 license          'All rights reserved'
