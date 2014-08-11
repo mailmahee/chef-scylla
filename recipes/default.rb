@@ -29,13 +29,13 @@ include_recipe 'nodejs'
 #   action :install
 # end
 
-remote_file "scylla.deb" do
+remote_file "/scylla.deb" do
   source "10.0.2.2:8000"
   mode 0644
 end
 
 dpkg_package "scylla" do
-  source "scylla.deb"
+  source "/scylla.deb"
   action :install
 end
 
