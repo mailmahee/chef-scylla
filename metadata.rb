@@ -8,6 +8,6 @@ version          '1.0.1'
 
 depends 'git'
 depends 'imagemagick'
-depends 'mongodb'
+# depends 'mongodb'
 depends 'nodejs'
 depends 'npm'

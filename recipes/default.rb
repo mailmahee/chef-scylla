@@ -12,8 +12,8 @@
 # include_recipe 'build-essential'
 include_recipe 'git'
 include_recipe 'imagemagick'
-include_recipe 'mongodb::10gen_repo'
-include_recipe 'mongodb'
+# include_recipe 'mongodb::10gen_repo'
+# include_recipe 'mongodb'
 include_recipe 'nodejs'
 
 user node['scylla']['user'] do
