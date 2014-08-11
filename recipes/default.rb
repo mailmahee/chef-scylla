@@ -30,7 +30,7 @@ include_recipe 'nodejs'
 # end
 
 remote_file "/scylla.deb" do
-  source "10.0.2.2:8000"
+  source "10.0.2.2:8000/scylla.deb"
   mode 0644
 end
 
