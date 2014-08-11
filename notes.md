@@ -1,7 +1,7 @@
 # Chef todo:
 
 1. Rip out all the mongodb/depricated shit
-2. understand how it works by fixing it. 
+2. understand how it works by fixing it.
 3. get chef-zero working with vagrant?
 4. need some way to deal with sql crap
 
@@ -31,3 +31,17 @@ questions for realzies
         3. does some diddling.
 
 //mabe make-deb.sh should package the node app and then let chef build the conf/bin/etc, even though its pretty much only going to be installed to ubuntu
+
+
+to get chef going
+
+cd chef repo
+export CHEF_USER=‘stefan’
+bundle exec berks install --path vendor/cookbooks
+bundle exec rake server:start
+
+
+to see all cookbooks in the server 
+export CHEF_SERVER_URL='http://localhost:4444'
+bundle exec knife cookbook list --all  
+
