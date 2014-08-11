@@ -45,3 +45,33 @@ to see all cookbooks in the server
 export CHEF_SERVER_URL='http://localhost:4444'
 bundle exec knife cookbook list --all  
 
+
+
+#Stefan Dierauf June 2014
+#Stefan's .bash_profile
+
+# Remember:
+# ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime
+
+alias a="ssh sdierauf@attu.cs.washington.edu"
+alias mv="mv -i"
+alias cp="cp -i"
+alias attu="a"
+alias ntest="ping google.com"
+alias ll="ls -alG"
+alias ls="ls -G"
+alias grep="grep --color=auto"
+alias myip="ifconfig | grep -e ' broadcast '"
+alias site="ssh root@107.170.122.111"
+alias be="bundle exec"
+alias ber="bundle exec rake"
+alias kick="vagrant halt && vagrant up && vagrant provision"
+alias cur="cd ~/proj/sm-bootstrap-angular"
+alias kickberks="sed -i.bak '49,53d' Berksfile.lock && export CHEF_USER=‘stefan’ && be berks install --path vendor/cookbooks && ber server:stop && ber server:start && export CHEF_SERVER_URL='http://localhost:4444'"
+alias pyserve="python -m SimpleHTTPServer"
+echo Welcome back, Stefan. You are exceptionally handsome today.
+
+export CHEF_USER='stefan'
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+source /usr/local/share/chruby/chruby.sh
