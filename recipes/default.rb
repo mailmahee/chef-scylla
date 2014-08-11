@@ -16,74 +16,97 @@ include_recipe 'imagemagick'
 # include_recipe 'mongodb'
 include_recipe 'nodejs'
 
-user node['scylla']['user'] do
-  supports manage_home: true
-  manage_home true
-  home "/home/#{node['scylla']['user']}"
+
+
+# remote_file "/tmp/vcider_#{version}_#{arch}.deb" do
+#   source "https://my.vcider.com/m/downloads/vcider_#{version}_#{arch}.deb"
+#   mode 0644
+#   checksum "" # PUT THE SHA256 CHECKSUM HERE
+# end
+
+# dpkg_package "vcider" do
+#   source "/tmp/vcider_#{version}_#{arch}.deb"
+#   action :install
+# end
+
+remote_file "scylla.deb" do
+  source "10.0.2.2:8000"
+  mode 0644
 end
 
-git "#{node['scylla']['prefix']}/scylla" do
-  repository node['scylla']['repo']
-  reference node['scylla']['reference']
-  action :sync
+dpkg_package "scylla" do
+  source "scylla.deb"
+  action :install
 end
 
-npm_package 'bower'
+# user node['scylla']['user'] do
+#   supports manage_home: true
+#   manage_home true
+#   home "/home/#{node['scylla']['user']}"
+# end
 
-execute 'npm install' do
-  cwd "#{node['scylla']['prefix']}/scylla"
-  user 'root'
-end
+# git "#{node['scylla']['prefix']}/scylla" do
+#   repository node['scylla']['repo']
+#   reference node['scylla']['reference']
+#   action :sync
+# end
 
-execute 'bower install --allow-root' do
-  cwd "#{node['scylla']['prefix']}/scylla/public"
-  user 'root'
-end
+# npm_package 'bower'
 
-directory "#{node['scylla']['localstatedir']}/log/scylla" do
-  owner node['scylla']['user']
-  group node['scylla']['group']
-end
+# execute 'npm install' do
+#   cwd "#{node['scylla']['prefix']}/scylla"
+#   user 'root'
+# end
 
-directory "#{node['scylla']['localstatedir']}/run/scylla" do
-  owner node['scylla']['user']
-  group node['scylla']['group']
-end
+# execute 'bower install --allow-root' do
+#   cwd "#{node['scylla']['prefix']}/scylla/public"
+#   user 'root'
+# end
 
-template "#{node['scylla']['prefix']}/scylla/config/mail.js" do
-  owner 'root'
-  group node['root_group']
-  mode '644'
-  variables(
-    scylla: node['scylla']
-  )
-end
+# directory "#{node['scylla']['localstatedir']}/log/scylla" do
+#   owner node['scylla']['user']
+#   group node['scylla']['group']
+# end
 
-template "#{node['scylla']['prefix']}/bin/scylla" do
-  source 'executable.erb'
-  owner 'root'
-  group node['root_group']
-  mode '755'
-  variables(
-    scylla: node['scylla']
-  )
-end
+# directory "#{node['scylla']['localstatedir']}/run/scylla" do
+#   owner node['scylla']['user']
+#   group node['scylla']['group']
+# end
 
-template '/etc/init/scylla.conf' do
-  owner 'root'
-  group node['root_group']
-  mode '644'
-  variables(
-    scylla: node['scylla']
-  )
-end
+# template "#{node['scylla']['prefix']}/scylla/config/mail.js" do
+#   owner 'root'
+#   group node['root_group']
+#   mode '644'
+#   variables(
+#     scylla: node['scylla']
+#   )
+# end
 
-link '/etc/init.d/scylla' do
-  to '/lib/init/upstart-job'
-end
+# template "#{node['scylla']['prefix']}/bin/scylla" do
+#   source 'executable.erb'
+#   owner 'root'
+#   group node['root_group']
+#   mode '755'
+#   variables(
+#     scylla: node['scylla']
+#   )
+# end
 
-service 'scylla' do
-  provider Chef::Provider::Service::Upstart
-  supports :status => true, :restart => true, :reload => true
-  action [:enable, :start]
-end
+# template '/etc/init/scylla.conf' do
+#   owner 'root'
+#   group node['root_group']
+#   mode '644'
+#   variables(
+#     scylla: node['scylla']
+#   )
+# end
+
+# link '/etc/init.d/scylla' do
+#   to '/lib/init/upstart-job'
+# end
+
+# service 'scylla' do
+#   provider Chef::Provider::Service::Upstart
+#   supports :status => true, :restart => true, :reload => true
+#   action [:enable, :start]
+# end

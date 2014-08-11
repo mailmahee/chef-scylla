@@ -11,3 +11,4 @@ depends 'imagemagick'
 # depends 'mongodb'
 depends 'nodejs'
 depends 'npm'
+#need to add mysql
