@@ -16,19 +16,6 @@ include_recipe 'imagemagick'
 # include_recipe 'mongodb'
 include_recipe 'nodejs'
 
-
-
-# remote_file "/tmp/vcider_#{version}_#{arch}.deb" do
-#   source "https://my.vcider.com/m/downloads/vcider_#{version}_#{arch}.deb"
-#   mode 0644
-#   checksum "" # PUT THE SHA256 CHECKSUM HERE
-# end
-
-# dpkg_package "vcider" do
-#   source "/tmp/vcider_#{version}_#{arch}.deb"
-#   action :install
-# end
-
 remote_file "/scylla.deb" do
   source "http://10.0.2.2:8000/scylla.deb"
   mode 0644
