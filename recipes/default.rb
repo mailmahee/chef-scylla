@@ -34,6 +34,10 @@ dpkg_package "scylla" do
   action :install
 end
 
+file "/scylla.deb" do
+  action :delete
+end
+
 
 
 # user node['scylla']['user'] do
