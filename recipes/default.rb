@@ -19,6 +19,7 @@ include_recipe 'imagemagick'
 # include_recipe 'mongodb::10gen_repo'
 # include_recipe 'mongodb'
 include_recipe 'nodejs'
+include_recipe 'sm-service::database'
 
 # 
 # Don't need to do this!
