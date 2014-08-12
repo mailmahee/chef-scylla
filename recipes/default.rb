@@ -50,7 +50,8 @@ end
 
 directory "#{node['scylla']['prefix']}/scylla/images/resources" do
   owner 'root'
-  mode 00664
+  group node['root_group']
+  mode '664'
   recursive true
   action :create
 end
