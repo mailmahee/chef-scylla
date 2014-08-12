@@ -26,6 +26,10 @@ remote_file "/scylla.deb" do
 end
 
 dpkg_package "scylla" do
+  action :purge
+end
+
+dpkg_package "scylla" do
   source "/scylla.deb"
   action :install
 end
