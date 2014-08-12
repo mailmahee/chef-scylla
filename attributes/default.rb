@@ -14,3 +14,7 @@ default['scylla']['mail_key'] = 'password'
 default['scylla']['storage_base'] = '/opt/sm/scylla/images'
 default['scylla']['storage_resources'] = 'resources'
 
+default['scylla']['database_user'] = 'scylla'
+default['scylla']['database_password'] = 'scylla'
+default['scylla']['database_dialect'] = 'mysql'
+
