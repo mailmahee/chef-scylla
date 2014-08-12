@@ -48,6 +48,14 @@ end
 # End deployer snip
 #
 
+directory "#{node['scylla']['prefix']}/scylla/images/resources" do
+  owner 'root'
+  group node['root_group']
+  mode 00664
+  recursive true
+  action :create
+end
+
 template "#{node['scylla']['prefix']}/scylla/config/storage.js" do
   owner 'root'
   group node['root_group']
