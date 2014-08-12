@@ -2,9 +2,9 @@
 # Cookbook Name:: chef-scylla
 # Recipe:: default
 #
-# Copyright (C) 2013 YOUR_NAME
+# Copyright (C) 2014 Stefan Dierauf
 # 
-# All rights reserved - Do Not Redistribute
+# All rights reserved - YOU BETTA NOT COPY THIS MMKAY
 # TODO:
 # - build storage.js from template
 # - mkdir images/resources in the right folder
@@ -19,6 +19,11 @@ include_recipe 'imagemagick'
 # include_recipe 'mongodb::10gen_repo'
 # include_recipe 'mongodb'
 include_recipe 'nodejs'
+
+# 
+# Don't need to do this!
+# Deployer will take care of getting and pushing down deb
+#
 
 remote_file "/scylla.deb" do
   source "http://10.0.2.2:8000/scylla.deb"
@@ -37,6 +42,10 @@ end
 file "/scylla.deb" do
   action :delete
 end
+
+#
+# End deployer snip
+#
 
 template "#{node['scylla']['prefix']}/scylla/config/storage.js" do
   owner 'root'
