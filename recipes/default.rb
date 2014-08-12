@@ -38,6 +38,23 @@ file "/scylla.deb" do
   action :delete
 end
 
+template "#{node['scylla']['prefix']}/scylla/config/storage.js" do
+  owner 'root'
+  group node['root_group']
+  mode '664'
+  variables(
+    scylla: node['scylla']
+  )
+end
+
+# template "#{node['scylla']['prefix']}/scylla/config/mail.js" do
+#   owner 'root'
+#   group node['root_group']
+#   mode '644'
+#   variables(
+#     scylla: node['scylla']
+#   )
+# end
 
 
 # user node['scylla']['user'] do
