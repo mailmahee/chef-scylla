@@ -62,7 +62,13 @@ questions/todo for today
     - integration with deployer?
     - verifying scylla actually will work and stuff
 
+Notes from Chris/Dusty
+    - **Deployer** will take care of pushing deb to box
+    - will also provide sql creds or something, which I will then replace attributes/whatever (data bags?)
 
+
+
+```
 #Stefan Dierauf June 2014
 #Stefan's .bash_profile
 
@@ -91,3 +97,4 @@ export CHEF_USER='stefan'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 source /usr/local/share/chruby/chruby.sh
+```
