@@ -46,6 +46,22 @@ export CHEF_SERVER_URL='http://localhost:4444'
 bundle exec knife cookbook list --all  
 
 
+------------------
+
+12/8/2014
+Notes from Dusty:
+    - version (and arch) will come from package.json (somehow)
+    - jenkins will build the deb
+    - grunt-release will incrememt the version
+
+questions/todo for today
+    - timeline for getting sql stuff setup? will it be a specific mysql-scylla cookbook/recipe, or generic
+    - breaking apart stuff/getting kickover time faster
+    - start stubbing out storage.js and images.js
+    - not totally sure what images.js does, will check out with local version of scylla later
+    - integration with deployer?
+    - verifying scylla actually will work and stuff
+
 
 #Stefan Dierauf June 2014
 #Stefan's .bash_profile
