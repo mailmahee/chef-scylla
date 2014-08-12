@@ -5,7 +5,11 @@
 # Copyright (C) 2013 YOUR_NAME
 # 
 # All rights reserved - Do Not Redistribute
-#
+# TODO:
+# - build storage.js from template
+# - mkdir images/resources in the right folder
+# - cookbook for mysql?
+# - logging to syslog?
 
 # include_recipe 'apt'
 # include_recipe 'python'
@@ -25,6 +29,8 @@ dpkg_package "scylla" do
   source "/scylla.deb"
   action :install
 end
+
+
 
 # user node['scylla']['user'] do
 #   supports manage_home: true
@@ -92,8 +98,8 @@ end
 #   to '/lib/init/upstart-job'
 # end
 
-# service 'scylla' do
-#   provider Chef::Provider::Service::Upstart
-#   supports :status => true, :restart => true, :reload => true
-#   action [:enable, :start]
-# end
+service 'scylla' do
+  provider Chef::Provider::Service::Upstart
+  supports :status => true, :restart => true, :reload => true
+  action [:enable, :start]
+end
