@@ -65,7 +65,10 @@ questions/todo for today
 Notes from Chris/Dusty
     - **Deployer** will take care of pushing deb to box
     - will also provide sql creds or something, which I will then replace attributes/whatever (data bags?)
-
+Notes from Kelly
+    - look at smauth role and copy it
+    - need conf and erb in config for jenkins
+    
 
 
 ```

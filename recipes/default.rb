@@ -14,7 +14,7 @@
 # include_recipe 'apt'
 # include_recipe 'python'
 # include_recipe 'build-essential'
-include_recipe 'git'
+# include_recipe 'git'
 include_recipe 'imagemagick'
 # include_recipe 'mongodb::10gen_repo'
 # include_recipe 'mongodb'
