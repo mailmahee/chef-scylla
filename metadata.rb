@@ -11,9 +11,5 @@ depends 'imagemagick'
 # depends 'mongodb'
 depends 'nodejs'
 depends 'npm'
-<<<<<<< HEAD
 depends 'sm-service'
-#need to add mysql
-=======
 depends 'build-essential'
->>>>>>> master
