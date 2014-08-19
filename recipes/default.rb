@@ -13,7 +13,7 @@
 
 # include_recipe 'apt'
 # include_recipe 'python'
-include_recipe 'build-essential'
+# include_recipe 'build-essential'
 # include_recipe 'git'
 include_recipe 'imagemagick'
 # include_recipe 'mongodb::10gen_repo'
@@ -26,23 +26,23 @@ include_recipe 'nodejs'
 # Deployer will take care of getting and pushing down deb
 #
 
-# remote_file "/scylla.deb" do
-#   source "http://10.0.2.2:8000/scylla.deb"
-#   mode 0644
-# end
+remote_file "/scylla.deb" do
+  source "http://10.0.2.2:8000/scylla.deb"
+  mode 0644
+end
 
-# dpkg_package "scylla" do
-#   action :purge
-# end
+dpkg_package "scylla" do
+  action :purge
+end
 
-# dpkg_package "scylla" do
-#   source "/scylla.deb"
-#   action :install
-# end
+dpkg_package "scylla" do
+  source "/scylla.deb"
+  action :install
+end
 
-# file "/scylla.deb" do
-#   action :delete
-# end
+file "/scylla.deb" do
+  action :delete
+end
 
 #
 # End deployer snip
