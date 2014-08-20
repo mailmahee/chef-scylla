@@ -17,7 +17,7 @@ include_recipe 'nodejs'
 
 directory "#{node['scylla']['prefix']}/scylla/images/resources" do
   owner 'root'
-  group node['root_group']
+  group 'root'
   mode '775'
   recursive true
   action :create
@@ -25,7 +25,7 @@ end
 
 directory "#{node['scylla']['prefix']}/scylla/config" do
   owner 'root'
-  group node['root_group']
+  group 'root'
   mode '775'
   recursive true
   action :create
@@ -33,7 +33,7 @@ end
 
 template "#{node['scylla']['prefix']}/scylla/config/storage.js" do
   owner 'root'
-  group node['root_group']
+  group 'root'
   mode '664'
   variables(
     scylla: node['scylla']
@@ -42,7 +42,7 @@ end
 
 template "#{node['scylla']['prefix']}/scylla/config/database.js" do
   owner 'root'
-  group node['root_group']
+  group 'root'
   mode '664'
   variables(
     scylla: node['scylla']
