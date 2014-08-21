@@ -2,6 +2,7 @@ module.exports = {
     user: "<%= @scylla['database_user'] %>",
     password:"<%= @scylla['database_password'] %>",
     properties:{
+        host: "<%= @scylla["database_host"] %>",
         dialect: "<%= @scylla['database_dialect'] %>"
     }
 };
