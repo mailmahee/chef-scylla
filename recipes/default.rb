@@ -15,12 +15,12 @@ include_recipe 'build-essential'
 include_recipe 'imagemagick'
 include_recipe 'nodejs'
 
-directory "#{node['scylla']['prefix']}/scylla/images/resources" do
-  owner 'root'
-  group 'root'
-  mode '775'
-  recursive true
-  action :create
+directory "#{node['scylla']['storage-base']}/resources" do
+    owner 'root'
+    group 'root'
+    mode '776'
+    recursive true
+    action :create
 end
 
 service 'scylla' do

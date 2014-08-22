@@ -11,7 +11,7 @@ default['scylla']['reference'] = 'master'
 default['scylla']['mail_user'] = 'username'
 default['scylla']['mail_key'] = 'password'
 
-default['scylla']['storage_base'] = '/opt/sm/scylla/images'
+default['scylla']['storage_base'] = '/var/scylla/images'
 default['scylla']['storage_resources'] = 'resources'
 
 # need to abstract this out to databags
