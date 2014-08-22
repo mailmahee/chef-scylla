@@ -15,7 +15,7 @@ include_recipe 'build-essential'
 include_recipe 'imagemagick'
 include_recipe 'nodejs'
 
-directory "#{node['scylla']['storage-base']}/" do
+directory "#{node['scylla']['storage_base']}" do
     owner 'root'
     group 'root'
     mode 00776
@@ -23,7 +23,7 @@ directory "#{node['scylla']['storage-base']}/" do
     action :create
 end
 
-directory "#{node['scylla']['storage-base']}/resources" do
+directory "#{node['scylla']['storage_base']}/resources" do
     owner 'root'
     group 'root'
     mode 00776
