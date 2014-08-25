@@ -4,7 +4,7 @@ maintainer_email 'ops@simplymeasured.com'
 license          'All rights reserved'
 description      'Installs/Configures chef-scylla'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '1.0.11'
+version          '1.0.12'
 
 depends 'imagemagick'
 depends 'nodejs'

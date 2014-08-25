@@ -18,7 +18,7 @@ include_recipe 'nodejs'
 directory "#{node['scylla']['storage_base']}" do
     owner 'root'
     group 'root'
-    mode 00776
+    mode 0755
     recursive true
     action :create
 end
@@ -26,7 +26,7 @@ end
 directory "#{node['scylla']['storage_base']}/resources" do
     owner 'root'
     group 'root'
-    mode 00776
+    mode 0755
     recursive true
     action :create
 end
