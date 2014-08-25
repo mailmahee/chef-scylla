@@ -31,6 +31,14 @@ directory "#{node['scylla']['storage_base']}/resources" do
     action :create
 end
 
+directory "#{node['scylla']['prefix']}/scylla/config" do
+  owner 'root'
+  group 'root'
+  mode 0755
+  recursive true
+  action :create
+end
+
 template "#{node['scylla']['prefix']}/scylla/config/storage.js" do
   owner 'root'
   group 'root'
