@@ -27,8 +27,7 @@ directory "#{node['scylla']['storage_base']}/resources" do
     owner 'root'
     group 'root'
     mode 0755
-:Service::Upstart
-  supports :status =>     recursive true
+    recursive true
     action :create
 end
 
@@ -42,6 +41,7 @@ template "#{node['scylla']['prefix']}/scylla/config/storage.js" do
 end
 
 service 'scylla' do
-  provider Chef::Provider:true, :restart => true, :reload => true
+  provider Chef::Provider::Service::Upstart
+  supports :status => true, :restart => true, :reload => true
   action [:enable, :start]
 end
