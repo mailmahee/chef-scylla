@@ -35,7 +35,7 @@ template "#{node['scylla']['prefix']}/scylla/config/storage.js" do
   owner 'root'
   group 'root'
   mode 0664
-  variables (
+  variables(
     scylla: node['scylla']
   )
 end
