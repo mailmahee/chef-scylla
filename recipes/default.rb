@@ -16,32 +16,32 @@ include_recipe 'imagemagick'
 include_recipe 'nodejs'
 
 directory "#{node['scylla']['storage_base']}" do
-    owner 'root'
-    group 'root'
-    mode 0755
-    recursive true
-    action :create
+  owner node['deploy']['user']
+  group node['deploy']['group']
+  mode 0755
+  recursive true
+  action :create
 end
 
 directory "#{node['scylla']['storage_base']}/resources" do
-    owner 'root'
-    group 'root'
-    mode 0755
-    recursive true
-    action :create
+  owner node['deploy']['user']
+  group node['deploy']['group']
+  mode 0755
+  recursive true
+  action :create
 end
 
 directory "#{node['scylla']['prefix']}/scylla/config" do
-  owner 'root'
-  group 'root'
+  owner node['deploy']['user']
+  group node['deploy']['group']
   mode 0755
   recursive true
   action :create
 end
 
 template "#{node['scylla']['prefix']}/scylla/config/storage.js" do
-  owner 'root'
-  group 'root'
+  owner node['deploy']['user']
+  group node['deploy']['group']
   mode 0664
   variables(
     scylla: node['scylla']
