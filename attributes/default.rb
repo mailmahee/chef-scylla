@@ -1,13 +1,8 @@
-override['nodejs']['install_method'] = 'package'
-override['nodejs']['dir'] = '/usr'
-override['npm']['version'] = '1.3.5'
-
-default['deploy']['user'] = 'deploy'
-default['deploy']['group'] = 'sysadmin'
+default['scylla']['user'] = 'deploy'
+default['scylla']['group'] = 'sysadmin'
 
 default['scylla']['prefix'] = '/opt/sm'
 default['scylla']['localstatedir'] = '/var'
-default['scylla']['user'] = 'scylla'
 default['scylla']['repo'] = 'https://github.com/simplymeasured/scylla.git'
 default['scylla']['reference'] = 'master'
 
